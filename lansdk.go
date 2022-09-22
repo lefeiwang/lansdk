@@ -1,8 +1,9 @@
 package lansdk
 
 import (
-	"lansdk/tool"
 	"time"
+
+	"github.com/lefeiwang/lansdk/tool"
 )
 
 // any类型转字符串
