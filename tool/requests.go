@@ -26,7 +26,7 @@ type Request struct {
 	Timeout time.Duration
 }
 
-func (r *Request) Run() (map[string]interface{}, interface{}, error) {
+func Run(r *Request) (map[string]interface{}, interface{}, error) {
 	client := &http.Client{Timeout: r.Timeout}
 	// 利用 httptest 包生成 request
 	req, err := http.NewRequest(r.Method, r.Route, r.Params)

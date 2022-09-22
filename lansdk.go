@@ -1,6 +1,7 @@
 package lansdk
 
 import (
+	"io"
 	"time"
 
 	"github.com/lefeiwang/lansdk/tool"
@@ -134,3 +135,14 @@ func PrintStackTrace(err interface{}) string {
 
 // http请求
 type Request tool.Request
+
+// struct转io.Reader
+func StructToReader(v interface{}) io.Reader {
+	return tool.StructToReader(v)
+}
+
+// 处理请求
+func Run(r *Request) (map[string]interface{}, interface{}, error) {
+	tmp := tool.Request(*r)
+	return tool.Run(&tmp)
+}
